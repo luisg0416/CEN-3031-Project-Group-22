@@ -70,13 +70,21 @@ func main() {
 
 	// need to open a file and save it in the program in some way
 
-	newPage := ReadFile("testNote.txt")
+	reader := bufio.NewReader(os.Stdin)
+
+	fmt.Println("Enter File to Open:")
+	fileName,_ := reader.ReadString('\n')
+
+	newPage := ReadFile(fileName)
 
 	for i, element := range newPage.lines {
 		fmt.Println(i, element)
 	}
 
-	newPage.SaveNewPage("test.txt")
+	fmt.Println("Enter File to Save to:")
+	fileName2,_ := reader.ReadString('\n')
+
+	newPage.SaveNewPage(fileName2)
 	
 
 	// should probably use a struct and edit it using functions

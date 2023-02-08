@@ -75,6 +75,9 @@ func main() {
 	fmt.Println("Enter File to Open:")
 	fileName,_ := reader.ReadString('\n')
 
+	fileName = strings.TrimSuffix(fileName, "\n")
+	fileName = strings.TrimSuffix(fileName, "\r")
+
 	newPage := ReadFile(fileName)
 
 	for i, element := range newPage.lines {
@@ -83,6 +86,9 @@ func main() {
 
 	fmt.Println("Enter File to Save to:")
 	fileName2,_ := reader.ReadString('\n')
+
+	fileName2 = strings.TrimSuffix(fileName2, "\n")
+	fileName2 = strings.TrimSuffix(fileName2, "\r")
 
 	newPage.SaveNewPage(fileName2)
 	

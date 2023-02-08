@@ -1,7 +1,7 @@
-#Sprint One
+# Sprint One
 
-User Stories
-////////////
+### User Stories
+
 As a university student, I want to be able to bold, underline, and italicize my text so I can emphasize important points in my notes!
 
 As a club leader, I want to be able to create bullet points and align text so I can organize the club's information in a neat way!
@@ -31,8 +31,9 @@ As a power user I want
 As a coder I want
 1. Code blocks
 
-Issues
-////////////////////////////////////////
+-------------------------------------------------------------------------------------------------------
+### Issues
+
 Frontend
 1. A way for the user to bold, underline, and italicize their text.
 2. Different font, different size texts, bullet points, and text alignment.
@@ -41,8 +42,10 @@ Backend
 1. A way to save and open files.
 2. A way to include meta data into files.
 
-Successes
-////////////////////////////////////////////
+-----------------------------------------------------------------------------------------------------
+
+### Successes
+
 Frontend was able to successfully address:
 1. Bold 
 2. Underline 
@@ -57,8 +60,10 @@ Backend was able to successfully address:
 2. Opening files
 3. Reading files
 
-Failures
-//////////////////////////////////
+---------------------------------------------------------------------------------------------------
+
+### Failures
+
 Frontend was unable to successfully address:
 1. Different size font.
 

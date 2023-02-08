@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"log"
+	//"log"
 )
 
 type Page struct {
@@ -50,22 +50,33 @@ func ReadConfig(fileName string) {
 	}
 }
 
+func (p *Page) SaveNewPage(filePath string) {
+	file, err := os.Create(filePath)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	defer file.Close()
+
+	for _,s := range p.lines {
+		_, writeErr := file.WriteString(s)
+		if writeErr != nil {
+			fmt.Println(writeErr)
+		}
+		file.WriteString("\n")
+	}
+}
+
 func main() {
 
 	// need to open a file and save it in the program in some way
-	path, err := os.Getwd()
-
-    if err != nil {
-        log.Println(err)
-    }
-
-    fmt.Println(path)
 
 	newPage := ReadFile("testNote.txt")
 
 	for i, element := range newPage.lines {
 		fmt.Println(i, element)
 	}
+
+	newPage.SaveNewPage("test.txt")
 	
 
 	// should probably use a struct and edit it using functions

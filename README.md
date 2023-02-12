@@ -5,5 +5,5 @@
 - Uses EsBuild as the javascript bundler
 
 # Commands
-npm run dev
-go run main.go
+- npm run dev
+- go run main.go

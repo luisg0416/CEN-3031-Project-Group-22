@@ -4,11 +4,19 @@
 - Added routing using *BrowserRouter* to switch seamlessly between different pages without refreshing the browser tab
 - Uses *EsBuild* as the javascript bundler
 
+### Frontend
+- Make frontend changes in **"frontend/application.tsx"**
+- Add/modify pages in **"frontend/pages/"**
+### Backend
+- Make changes to main.go
+
 # Commands
+front-end: 
 ```
 npm run dev
 ```
-```
+back-end:
+``` back-end
 go run main.go
 ```
 

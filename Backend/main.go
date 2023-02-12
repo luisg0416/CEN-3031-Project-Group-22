@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	//"log"
 )
 
 type Page struct {

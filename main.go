@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 	"github.com/gofiber/fiber/v2"
-	//"github.com/luisg0416/CEN-3031-Project-Group-22/database"
+	"github.com/luisg0416/CEN-3031-Project-Group-22/database"
 	"github.com/luisg0416/CEN-3031-Project-Group-22/Models"
 	//"github.com/luisg0416/CEN-3031-Project-Group-22/Routes"
 )
@@ -18,7 +18,7 @@ func main() {
 
 	fmt.Println("this is just so vscode shuts up about my imports")
 	
-	//database.ConnectDb()
+	database.ConnectDb()
 	app := fiber.New()
 
 	app.Get("/api", func(c *fiber.Ctx) error {

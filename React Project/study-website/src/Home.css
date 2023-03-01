@@ -1,4 +1,18 @@
-.home h1 {
-    position: relative;
-    top: 200px;
+.home h1{
+    font-size: 60px;
 }
+
+.flashcards h1{
+  font-size: 1.5em;  
+}
+
+.notes h1{
+font-size: 1.5em;
+}
+
+.activities h1{
+    font-size: 1.5em;
+}
+
+
+

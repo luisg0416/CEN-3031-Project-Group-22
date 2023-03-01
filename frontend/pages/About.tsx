@@ -1,6 +1,11 @@
 import React from "react";
-import TextEditor from "./TextEditor";
+import { Typography, Button, AppBar, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container } from '@mui/material'
 
 export default function About() {
-  return <TextEditor />
+  return (
+    <div className="about">
+      <CssBaseline/>
+      <h1>About</h1>
+    </div>
+  );
 }

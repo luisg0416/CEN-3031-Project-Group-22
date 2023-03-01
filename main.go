@@ -96,6 +96,7 @@ func main() {
 	frontendRoutes := []string{
 		"/",
 		"/about",
+		"/sign-in",
 	}
 
 	for _, route := range frontendRoutes {

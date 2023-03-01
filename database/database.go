@@ -1,21 +1,28 @@
 package database
 
 import(
+	"log"
+	"os"
 	"gorm.io/gorm"
 	"gorm.io/driver/sqlite"
+	"gorm.io/gorm/logger"
+	"github.com/luisg0416/CEN-3031-Project-Group-22/Models"
 )
 
 type DbInstance struct {
-	Db *gorm.Db
+	DB *gorm.DB
 }
 
 var db DbInstance
 
+
 func ConnectDb() {
-	database, err := gorm.Open(sqlite.Open("api.db"), &gorm.config{})
+
+	
+	database, err := gorm.Open(sqlite.Open("api.db"), &gorm.Config{})
 
 	if err != nil {
-		log.Fatal("Database connection Failes!", err.Error())
+		log.Fatal("Database connection Failed", err.Error())
 		os.Exit(2)
 	}
 
@@ -24,7 +31,9 @@ func ConnectDb() {
 	log.Println("Running Migrations")
 
 	// Migrations
+	
 	db.AutoMigrate(&Models.card{})
 
-	db = DbInstance{Db: database}
+
+	db = DbInstance{DB: database}
 }

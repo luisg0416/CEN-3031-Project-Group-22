@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background-color: rgb(40, 87, 151);
+  border-bottom: 4px solid rgb(224, 129, 46);
+}
+
+.navbar h1 {
+  position: relative;
+  left: 20px;
+  color: white
+}
+
+.navbar img {
+  position: relative;
+  left: 30px;
+  top: 9.5px;
+  height: 50px;
+}
+
+.navbar .links {
+  margin-left: auto;
+  color: white;
+  word-spacing: 2em;
+}
+
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+  font-size: 20px;
+  color: white;
+  position: relative;
+  top: 21px;
+  right: 20px;
+}
+
+.navbar a:hover{
+  background-color: rgb(32, 69, 120);;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}

@@ -20,12 +20,12 @@ func CreateFlashCard(c *fiber.Ctx) error {
 
 	//fmt.Println(flashCard)
 
-	return c.JSON(flashCards)
+	return c.Status(200).JSON(flashCards)
 }
 
 func GetFlashCards(c *fiber.Ctx) error {
 	if len(flashCards) == 0 {
-		
+		return c.Status(400).SendString("No FlashCards")
 	}
 
 	return c.JSON(flashCards)
@@ -33,16 +33,20 @@ func GetFlashCards(c *fiber.Ctx) error {
 
 func GetFlashCardsID(c *fiber.Ctx) error {
 	id, err := c.ParamsInt("id")
-		if err != nil {
-			return c.Status(401).SendString("Invalid id")
-		}
+	if err != nil {
+		return c.Status(401).SendString("Invalid id")
+	}
 
-		var card Models.Card
-		for _, card := range flashCards {
-			if card.Id == id {
-				return c.JSON(card)
-			}
+	var card Models.Card
+	for _, card := range flashCards {
+		if card.Id == id {
+			return c.JSON(card)
 		}
+	}
 
-		return c.JSON(card)
+	if card.Id == 0 {
+		return c.Status(401).SendString("ID does not exist")
+	}
+
+	return c.JSON(card)
 } 

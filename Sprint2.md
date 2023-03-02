@@ -3,6 +3,7 @@
 ### Frontend:
 
 For the frontend we build a navigation bar, added frontend routing to seamlessly switch through different pages
+
 Our homepage displays cards using the Material UI package with React
 
 Routing, Interaction, Sign in are the three suite of tests we performed using cypress

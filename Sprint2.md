@@ -5,10 +5,10 @@
 For the frontend we build a navigation bar, added frontend routing to seamlessly switch through different pages
 Our homepage displays cards using the Material UI package with React
 
-Routing, Interaction, Sign in are the three suite of tests performed by cypress
-* The routing tests proper navigation of each element in navigation bar by inspecting inspecting the URL for the intended address
-* The interaction test catches the input of the homepage buttons which eventually will be used to access the main features of our project
-* The sign in test catches the input of the sign in submition button
+Routing, Interaction, Sign in are the three suite of tests we performed using cypress
+* The *routing* test ensures proper navigation of each element in navigation bar by inspecting inspecting the URL for the intended address
+* The *interaction* test catches the input of the homepage buttons which eventually will be used to access the main features of our project
+* The *sign in* test catches the input of the sign in submition button
 
 -------
 ### Backend:

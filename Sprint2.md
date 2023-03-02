@@ -12,9 +12,9 @@ With the pivot from doing a notetaking app to doing a flashcard/study app, our m
 
 This sprint we were able to create the struct of the flashcard. We then used Fiber to create functions that:
 1. Detects when the golang api is up and running.
-2. Creates a flash card and posts the data on an https address.
-3. Gets the list of flashcards from an https address.
-4. Get a certain flashcard at a certain ID number.
+2. Creates a flash card and posts the data on an https address. Send POST to /api/flashCards
+3. Gets the list of flashcards from an https address. Send GET request to /api/flashCards
+4. Get a certain flashcard at a certain ID number. Send GET request to /api/flashCards/:id
 
 Unit tests created:
 1. Test if the server is up and running.

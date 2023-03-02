@@ -78,10 +78,12 @@ export default function SignIn() {
               label="Remember me"
             />
             <Button
+              id="signinButton"
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={() => { alert('clicked sign-in') }}
             >
               Sign In
             </Button>

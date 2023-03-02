@@ -7,9 +7,9 @@ const Navbar = () => {
             <h1>Gator Pal</h1>
             <img src="gator.png" alt="gator" />
             <div className="links">
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-                <Link to="/sign-in">Sign-in</Link>
+                <Link id="home" to="/">Home</Link>
+                <Link id="about" to="/about">About</Link>
+                <Link id="sign-in" to="/sign-in">Sign-in</Link>
             </div>
         </nav>
     );

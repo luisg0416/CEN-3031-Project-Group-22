@@ -13,7 +13,7 @@ export default function Home() {
         <Grid container spacing={4}>
           <Grid item>
             <Card sx={{ minWidth: 250 }}>
-              <CardActionArea>
+              <CardActionArea id="flashcardsButton" onClick={() => { alert('clicked flashcards') }}>
                 <CardContent>
                   <CardMedia
                     component="img"
@@ -32,7 +32,7 @@ export default function Home() {
           </Grid>
           <Grid item>
             <Card sx={{ minWidth: 250 }}>
-              <CardActionArea>
+              <CardActionArea id="gamesButton" onClick={() => { alert('clicked games') }}>
                 <CardContent>
                   <CardMedia
                     component="img"

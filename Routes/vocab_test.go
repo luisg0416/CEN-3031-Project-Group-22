@@ -1,11 +1,12 @@
 package routes
 
 import (
-	"bytes"
+	//"bytes"
+	//"encoding/json"
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http/httptest"
+	"strings"
 	"testing"
 
 	"github.com/gofiber/fiber/v2"
@@ -13,8 +14,34 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestCreateFlashCard(t *testing.T) {
+func TestApiPing(t *testing.T) {
 	
+	tests := []struct {
+		description  string
+		route        string
+		expectedCode int
+	}{
+		{
+			description:  "Get status of 200",
+			route:        "/api",
+			expectedCode: 200,
+		},
+	}
+	app := fiber.New()
+
+	Routes(app)
+
+	for _, test := range tests {
+
+		req := httptest.NewRequest("GET", test.route, nil)
+		resp, _ := app.Test(req, 1)
+
+		assert.Equalf(t, test.expectedCode, resp.StatusCode, test.description)	
+	}
+}
+
+func TestCreateFlashCard(t *testing.T) {
+
 	tests := []struct {
 		description  string
 		route        string
@@ -36,26 +63,19 @@ func TestCreateFlashCard(t *testing.T) {
 		},
 	}
 
-	card := &Models.Card {
-		Id: 1, 
-		Word: "something", 
-		Definition: "something else", 
-		List: "no list",
-	}
-
-	var jsonCard bytes.Buffer
-	err := json.NewEncoder(&jsonCard).Encode(card)
-	if err != nil {
-		t.Fatal(err)
-	}
+	bodyReader := strings.NewReader(`{
+		"word": "something",
+		"definition": "something else",
+		"list": "no list"
+	}`)
 
 	app := fiber.New()
 
 	Routes(app)
 
 	for _, test := range tests {
-		
-		req := httptest.NewRequest("Post", test.route, &jsonCard)
+
+		req := httptest.NewRequest("Post", test.route, bodyReader)
 		req.Header.Set("Header_Key", "Header_Value")
 		resp, _ := app.Test(req, 1)
 		defer resp.Body.Close()
@@ -68,7 +88,7 @@ func TestCreateFlashCard(t *testing.T) {
 		var jsonRes map[string]interface{}
 		err := json.Unmarshal(respBytes, &jsonRes)
 		if err != nil {
-			fmt.Println(err)
+			t.Log(err)
 		}
 		
 		respCard := &Models.Card{
@@ -89,7 +109,7 @@ func TestCreateFlashCard(t *testing.T) {
 }
 
 func TestGetFlashCards(t *testing.T) {
-	
+
 	tests := []struct {
 		description  string
 		route        string
@@ -135,3 +155,4 @@ func TestGetFlashCardsID(t *testing.T) {
 		})
 	}
 }
+

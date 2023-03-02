@@ -3,9 +3,7 @@ package routes
 import "github.com/gofiber/fiber/v2"
 
 func Routes(app *fiber.App) {
-	app.Get("/api", func(c *fiber.Ctx) error {
-		return c.SendString("golang api up and running")
-	})
+	app.Get("/api", ApiPing)
 
 	app.Post("/api/flashCards", CreateFlashCard)
 

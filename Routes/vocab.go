@@ -7,6 +7,11 @@ import (
 
 var flashCards []Models.Card
 
+func ApiPing(c *fiber.Ctx) error {
+	return c.Status(200).SendString("golang api up and running")
+}
+
+
 func CreateFlashCard(c *fiber.Ctx) error {
 	flashCard := &Models.Card{}
 		
@@ -20,7 +25,7 @@ func CreateFlashCard(c *fiber.Ctx) error {
 
 	//fmt.Println(flashCard)
 
-	return c.Status(200).JSON(flashCards)
+	return c.SendStatus(200)
 }
 
 func GetFlashCards(c *fiber.Ctx) error {

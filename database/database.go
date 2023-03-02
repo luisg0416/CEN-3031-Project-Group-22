@@ -27,7 +27,7 @@ func ConnectDb() {
 	log.Println("Connected to Database")
 	database.Logger = logger.Default.LogMode(logger.Info)
 	log.Println("Running Migrations")
-
+	
 	// Migrations
 	db.DB.AutoMigrate(&Models.Card{})
 

@@ -7,6 +7,7 @@
 ### Frontend
 - Make frontend changes in **"frontend/application.tsx"**
 - Add/modify pages in **"frontend/pages/"**
++ Fixed watch-and-serve (live reload)
 ### Backend
 - Make changes to main.go
 

@@ -1,6 +1,15 @@
 # Sprint 3
 
 ### Frontend:
+For the frontend we have began working on delivering the actual purpose of our application which is to provide a light-weight studying application for UF students 
+
+We have added the flash cards studying resource.
+Additionally, we have updated the homepage so that clicking the homepage buttons perform actual navigation to the features of the website.
+
+Routing, Interaction, Sign in are the three suite of tests we performed using cypress
+* The *routing* test ensures proper navigation of each element in navigation bar by inspecting inspecting the URL for the intended address
+* The *interaction* test catches the input of the homepage buttons which navigate to the different features of the website. We have provided additional testing for flashcards in which interactivity is simply tested by finding the card element, clicking it, and asserting that the card has in fact been flipped.
+* The *sign in* test catches the input of the sign in submition button
 
 -------
 ### Backend:

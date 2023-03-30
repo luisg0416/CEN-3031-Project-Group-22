@@ -55,3 +55,25 @@ func GetFlashCardsID(c *fiber.Ctx) error {
 
 	return c.JSON(card)
 } 
+
+func DeleteFlashCard(c *fiber.Ctx) error {
+	id, err := c.ParamsInt("id")
+	if err != nil {
+		return c.Status(401).SendString("Invalid Id")
+	}
+	var cards []Models.Card
+	found := false
+	for _, card := range flashCards {
+		if card.Id == id {
+			found = true
+		} else {
+			cards = append(cards, card)
+		}
+	}
+	if (!found) {
+		return c.Status(401).SendString("ID does not exist")
+	}
+
+	flashCards = cards
+	return c.SendStatus(200)
+}

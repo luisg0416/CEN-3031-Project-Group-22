@@ -10,4 +10,6 @@ func Routes(app *fiber.App) {
 	app.Get("/api/flashCards", GetFlashCards)
 
 	app.Get("/api/flashCards/:id", GetFlashCardsID)
+
+	app.Delete("/api/flashCards/:id", DeleteFlashCard)
 }

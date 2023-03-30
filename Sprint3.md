@@ -9,7 +9,7 @@ Additionally, we have updated the homepage so that clicking the homepage buttons
 Routing, Interaction, Sign in are the three suite of tests we performed using cypress
 * The *routing* test ensures proper navigation of each element in navigation bar by inspecting inspecting the URL for the intended address
 * The *interaction* test catches the input of the homepage buttons which navigate to the different features of the website. We have provided additional testing for flashcards in which interactivity is simply tested by finding the card element, clicking it, and asserting that the card has in fact been flipped.
-* The *sign in* test catches the input of the sign in submition button
+* The *sign in* test catches the input of the sign in submission button
 
 -------
 ### Backend:

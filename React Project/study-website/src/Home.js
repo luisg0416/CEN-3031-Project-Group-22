@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
     return (
         <div className="home">
             <h1>A Place To Better Prepare Students </h1>
             <h2>Sign Up. It's Easy.</h2>
-            <div className="flashcards">
+            <div className="flashcards"> 
+                <li><Link to="/flashcards">Flashcards</Link></li>
                 <h2>Flashcards</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt libero ipsam quasi expedita neque quia ex non temporibus odio veniam quos consectetur consequuntur, nihil dolores laboriosam dolor porro distinctio necessitatibus?</p>
             </div>

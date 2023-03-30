@@ -6,6 +6,14 @@
   font-size: 1.5em;  
 }
 
+.flashcards li{
+  list-style-type: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+
+}
+
 .notes h1{
 font-size: 1.5em;
 }

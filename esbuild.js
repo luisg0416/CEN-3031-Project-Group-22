@@ -18,7 +18,7 @@ const watchPlugin = {
 }
 
 const context = await esbuild.context( {
-    entryPoints: ["frontend/Application.tsx", "frontend/Home.css", "frontend/Navbar.css", "frontend/About.css"],
+    entryPoints: ["frontend/Application.tsx", "frontend/Home.css", "frontend/Navbar.css", "frontend/About.css", "frontend/Flashcard.css"],
     outdir: "public/assets",
     loader: { '.js': 'jsx' },
     bundle: true,

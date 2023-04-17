@@ -97,6 +97,7 @@ func main() {
 		"/",
 		"/about",
 		"/sign-in",
+		"/flashcards",
 	}
 
 	for _, route := range frontendRoutes {

@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Navbar from "./Navbar";
 import SignIn from "./pages/SignIn";
+import Flashcards from "./pages/Flashcards";
 import './Navbar.css';
 import './Home.css';
 import './About.css';
@@ -18,6 +19,7 @@ root.render(
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/flashcards" element={<Flashcards/>} />
       </Routes>
     </div>
   </BrowserRouter>

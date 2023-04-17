@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography, Button, IconButton, AppBar, Card, Box, CardActions, CardActionArea, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container } from '@mui/material'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import StyleIcon from '@mui/icons-material/Style'; //https://mui.com/material-ui/material-icons/?query=Cards
 
 export default function Home() {
@@ -7,13 +8,13 @@ export default function Home() {
     <div className="home">
       <CssBaseline/>
       <Container maxWidth="md" sx={{
-        minHeight: '70vh',
+        minHeight: '60vh',
         marginTop: 2
       }}>
         <Grid container spacing={4}>
           <Grid item>
             <Card sx={{ minWidth: 250 }}>
-              <CardActionArea id="flashcardsButton" onClick={() => { alert('clicked flashcards') }}>
+              <CardActionArea id="flashcardsButton" component={Link} to="/flashcards">
                 <CardContent>
                   <CardMedia
                     component="img"

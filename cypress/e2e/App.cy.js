@@ -22,15 +22,26 @@ describe('Interaction', () => {
   })
   it("Should acknowledge user wants flashcards", () =>  {
     cy.get('#flashcardsButton').click()
-    cy.on('window:alert',(t)=>{
-      expect(t).to.contains('clicked flashcards');
-   })
+    it("Should visit flashcards", () =>  {
+      cy.get('#flashcards').click()
+      cy.url().should('include', '/flashcards')
+    })
   })
   it("Should acknowledge user wants games", () =>  {
     cy.get('#gamesButton').click()
     cy.on('window:alert',(t)=>{
       expect(t).to.contains('clicked games');
    })
+  })
+})
+
+describe('Interaction: Flashcards', () => {
+  beforeEach(() => {
+    cy.visit('http://127.0.0.1:3000/flashcards')
+  })
+  it("Should flip one of the cards", () =>  {
+    cy.get('#card').click()
+    cy.get('#cardflip').should('exist');
   })
 })
 

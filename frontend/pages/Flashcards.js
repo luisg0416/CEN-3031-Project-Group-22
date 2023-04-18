@@ -1,10 +1,14 @@
 import React, {useState} from "react";
+import { Typography, Button, IconButton, AppBar, Card, Box, CardActions, CardActionArea, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container } from '@mui/material'
 import FlashcardList from "../FlashcardList";
 
 function Flashcards () {
     const [flashcards, setFlashcards] = useState(SAMPLE_FLASHCARDS)
     return (
-        <FlashcardList flashcards={flashcards} />
+        <div className="home">
+            <CssBaseline/>
+            <FlashcardList flashcards={flashcards} />
+        </div>
     );
 }
 

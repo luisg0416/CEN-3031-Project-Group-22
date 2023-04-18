@@ -8,10 +8,9 @@ export default function Home() {
     <div className="home">
       <CssBaseline/>
       <Container maxWidth="md" sx={{
-        minHeight: '60vh',
-        marginTop: 2
+        minHeight: '60vh'
       }}>
-        <Grid container spacing={4}>
+        <Grid container spacing={1}>
           <Grid item>
             <Card sx={{ minWidth: 250 }}>
               <CardActionArea id="flashcardsButton" component={Link} to="/flashcards">
@@ -52,21 +51,21 @@ export default function Home() {
           </Grid>
         </Grid>
       </Container>
-      <Box
-        component="footer"
-        sx={{
+      <Box component="footer" sx={{
           py: 3,
           px: 2,
+          position: 'fixed',
+    bottom: 0,
+    width: '100%',
           mt: 'auto',
           backgroundColor: (theme) =>
             theme.palette.mode === 'light'
               ? theme.palette.grey[200]
               : theme.palette.grey[800],
-        }}
-      >
+        }}>
         <Container maxWidth="sm">
-          <Typography variant="body1">
-            Footer
+          <Typography variant="body1" color="initial">
+            Copyright ©2023. LLC Limited
           </Typography>
         </Container>
       </Box>

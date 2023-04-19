@@ -1,5 +1,7 @@
 package models
 
+import "gorm.io/gorm"
+
 type Card struct {
 	Id         int    `json:"id" gorm:"primaryKey"`
 	Word       string `json:"word"`
@@ -12,4 +14,9 @@ type CardGroup struct {
 	Id    int    `json:"id" gorm:"primaryKey"`
 	Title string `json:"title"`
 	Cards []Card `json:"cards"`
+}
+
+func MigrateBooks(db *gorm.DB) error{
+	err := db.AutoMigrate(&Card{})
+	return err
 }

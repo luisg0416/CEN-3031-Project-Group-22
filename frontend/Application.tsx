@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Navbar from "./Navbar";
 import SignIn from "./pages/SignIn";
 import Flashcards from "./pages/Flashcards";
+import CreateAccount from "./pages/CreateAccount"
 import './Navbar.css';
 import './Home.css';
 import './About.css';
@@ -19,6 +20,7 @@ root.render(
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-in/create-acc" element={<CreateAccount />} />
         <Route path="/flashcards" element={<Flashcards/>} />
       </Routes>
     </div>

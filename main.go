@@ -41,6 +41,7 @@ func main() {
 		"/",
 		"/about",
 		"/sign-in",
+		"/sign-in/create-acc",
 		"/flashcards",
 	}
 

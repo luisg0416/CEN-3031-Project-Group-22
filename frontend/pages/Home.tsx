@@ -19,7 +19,7 @@ export default function Home() {
                     component="img"
                     height="100"
                     width="50"
-                    image="flashcards.png"
+                    image="matching.png"
                     alt="flashcards"
                     sx={{ padding: "2em 2em 2em 2em", objectFit: "contain" }}
                   />
@@ -32,18 +32,18 @@ export default function Home() {
           </Grid>
           <Grid item>
             <Card sx={{ minWidth: 250 }}>
-              <CardActionArea id="gamesButton" onClick={() => { alert('clicked games') }}>
+              <CardActionArea id="quizesButton" component={Link} to="/quizes">
                 <CardContent>
                   <CardMedia
                     component="img"
                     height="100"
                     width="50"
-                    image="games.png"
+                    image="quizes.png"
                     alt="flashcards"
                     sx={{ padding: "2em 2em 2em 2em", objectFit: "contain" }}
                   />
                   <Typography gutterBottom component="div">
-                    Games
+                    Quizes
                   </Typography>
                 </CardContent>
               </CardActionArea>

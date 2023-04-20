@@ -6,6 +6,19 @@ Project Description: Our plan is to make a website that gives UF students differ
 
 Team Members: Matthew Darrow (front-end), Kory Gauger (back-end), Luis Guerrero (front-end), Amari Nixon (back-end)
 
+# Frontend
+===================
+
+- Hosts *React* on *Go*
+- Uses *Go* as the webserver using *fiber* instead of the included node server within a "react app"
+- Added routing using *BrowserRouter* to switch seamlessly between different pages without refreshing the browser tab
+- Uses *EsBuild* as the javascript bundler
+
+## Running the frontend
+
+```
+node ./esbuild.js --watch
+```
 
 # Backend
 ===================
@@ -37,5 +50,3 @@ We have it configured to port 3000 if this port is occupied on your machine goin
 PORT=
 ```
 Will set you to a different port
-
-# Frontend

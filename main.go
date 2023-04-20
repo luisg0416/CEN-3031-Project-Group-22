@@ -51,6 +51,7 @@ func main() {
 		"/",
 		"/about",
 		"/sign-in",
+		"/sign-in/create-acc",
 		"/quizes",
 		"/quizes/cop4600",
 		"/quizes/phy2053",

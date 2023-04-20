@@ -78,16 +78,18 @@ export default function CreateAccount() {
               </Grid>
             </Grid>
             <Button
+              id="signupButtonSub"
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={() => { alert('clicked sign-up') }}
             >
               Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2" component={RouterLink} to="/sign-in">
+                <Link href="#" id="signinButton" variant="body2" component={RouterLink} to="/sign-in">
                   Already have an account? Sign in
                 </Link>
               </Grid>

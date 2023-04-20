@@ -13,7 +13,9 @@ Functions that we currently have:
 3. Gets the list of flashcards from an https address. Send GET request to /api/flashCards
 4. Get a certain flashcard at a certain ID number. Send GET request to /api/flashCards/:id
 5. Deletes a certain flashcard at a certain ID number. Send DELETE request to /api/flashCards/:id
-6. Sends flash card data to the database.
+6. Logs in a user. send GET request to /api/login
+7. Initializes previous created cards from user.
+8. Creates a user. sent POST request to /api/signup
 
 Unit tests:
 1. Test if the server is up and running.
@@ -21,4 +23,6 @@ Unit tests:
 3. Test if the flashcard data on the server matches the data in the test. "func TestGetFlashCards(t *testing.T)"
 4. Test if the flashcard data at a certain ID on the server matches the data in the test. "func TestGetFlashCardsID(t *testing.T)"
 5. Test if the flashcard data was successfully deleted.
-6. Test if the flash card data has been sent to the database.
+6. Test if user exists.
+7. Test if cards are properly initialized.
+8. Test if user is created.

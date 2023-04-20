@@ -32,7 +32,7 @@ export default function Home() {
           </Grid>
           <Grid item>
             <Card sx={{ minWidth: 250 }}>
-              <CardActionArea id="quizesButton" component={Link} to="/quizzes">
+              <CardActionArea id="quizzesButton" component={Link} to="/quizzes">
                 <CardContent>
                   <CardMedia
                     component="img"

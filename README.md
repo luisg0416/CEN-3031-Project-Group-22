@@ -13,7 +13,7 @@ Team Members: Matthew Darrow (front-end), Kory Gauger (back-end), Luis Guerrero 
 1. "github.com/gofiber/fiber/v2"
 2. "github.com/gofiber/template/html"
 3. "github.com/gocarina/gocsv"
-etc. among the imports
+4. etc.
 if any problems occur during setup that involve a package missing using the command
 ```
 go mod tidy

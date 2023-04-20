@@ -18,7 +18,10 @@ func main() {
 	// Load templates
 	engine := html.New("./views", ".html")
 
-	user := controllers.UserCards{}
+	user := controllers.UserCards{
+		Username: "kory",
+	}
+	user.InitializeCards()
 
 	// Create app
 	app := fiber.New(fiber.Config{

@@ -10,8 +10,8 @@ import (
 var flashCards []models.Card
 
 type UserCards struct {
-	cards []models.Card
-	username string
+	Cards []models.Card
+	Username string
 }
 
 func ApiPing(c *fiber.Ctx) error {
@@ -20,7 +20,7 @@ func ApiPing(c *fiber.Ctx) error {
 
 
 func (u *UserCards) CreateFlashCard(c *fiber.Ctx) error {
-	if (u.username == "") {
+	if (u.Username == "") {
 		return c.Status(400).SendString("No user")
 	}
 	
@@ -30,9 +30,9 @@ func (u *UserCards) CreateFlashCard(c *fiber.Ctx) error {
 		return err
 	}
 
-	flashCard.Id = len(u.cards) + 1
+	flashCard.Id = len(u.Cards) + 1
 
-	u.cards = append(u.cards, *flashCard)
+	u.Cards = append(u.Cards, *flashCard)
 
 	csvCards, err := os.Create("storage/flashCards.csv")
 	if err != nil {
@@ -42,7 +42,7 @@ func (u *UserCards) CreateFlashCard(c *fiber.Ctx) error {
 
 	newCard := models.CardWUser{
 		Id: flashCard.Id,
-		User: u.username,
+		User: u.Username,
 		Word: flashCard.Word,
 		Definition: flashCard.Definition,
 	}
@@ -55,11 +55,11 @@ func (u *UserCards) CreateFlashCard(c *fiber.Ctx) error {
 }
 
 func (u *UserCards) GetFlashCards(c *fiber.Ctx) error {
-	if len(u.cards) == 0 {
+	if len(u.Cards) == 0 {
 		return c.Status(400).SendString("No FlashCards")		
 	}
 
-	return c.JSON(u.cards)
+	return c.JSON(u.Cards)
 }
 
 func (u *UserCards) GetFlashCardsID(c *fiber.Ctx) error {

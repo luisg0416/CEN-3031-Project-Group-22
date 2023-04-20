@@ -5,7 +5,8 @@
 - Added sign-in and sign-up pages that follow one another
 - Fixed footer to the bottom of the homepage
 
-Unit tests:
+##### Unit tests:
+
 Routing
 1. Should visit the about page
 2. Should visit the sign-in page

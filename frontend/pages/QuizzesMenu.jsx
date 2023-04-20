@@ -3,7 +3,7 @@ import { Typography, Button, IconButton, AppBar, Card, Box, CardActions, CardAct
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import StyleIcon from '@mui/icons-material/Style'; //https://mui.com/material-ui/material-icons/?query=Cards
 
-export default function QuizesMenu() {
+export default function QuizzesMenu() {
   return (
     <div className="home">
       <CssBaseline/>
@@ -13,7 +13,7 @@ export default function QuizesMenu() {
         <Grid container spacing={1}>
           <Grid item>
             <Card sx={{ minWidth: 250 }}>
-              <CardActionArea id="cop4600Button" component={Link} to="/quizes/cop4600">
+              <CardActionArea id="cop4600Button" component={Link} to="/quizzes/cop4600">
                 <CardContent>
                   <Typography gutterBottom component="div">
                     COP4600
@@ -24,7 +24,7 @@ export default function QuizesMenu() {
           </Grid>
           <Grid item>
             <Card sx={{ minWidth: 250 }}>
-              <CardActionArea id="phy2053Button" component={Link} to="/quizes/phy2053">
+              <CardActionArea id="phy2053Button" component={Link} to="/quizzes/phy2053">
                 <CardContent>
                   <Typography gutterBottom component="div">
                     PHY2053

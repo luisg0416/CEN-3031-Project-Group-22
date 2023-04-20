@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
 	"github.com/luisg0416/CEN-3031-Project-Group-22/controllers"
@@ -40,7 +41,7 @@ func main() {
 	app.Get("/api/flashCards", user.GetFlashCards)
 	app.Get("/api/flashCards/:id", user.GetFlashCardsID)
 	app.Delete("/api/flashCards/:id", user.DeleteFlashCard)
-	
+
 	app.Get("/api/tasks", controllers.FetchTasks)
 	app.Post("/api/tasks", controllers.CreateTask)
 	app.Get("/api/tasks/:id", controllers.FetchTask)
@@ -50,7 +51,12 @@ func main() {
 		"/",
 		"/about",
 		"/sign-in",
+		"/quizes",
+		"/quizes/cop4600",
+		"/quizes/phy2053",
 		"/flashcards",
+		"/flashcards/cop4600",
+		"/flashcards/phy2053",
 	}
 
 	for _, route := range frontendRoutes {

@@ -32,7 +32,7 @@ func (u *UserCards) Login(c *fiber.Ctx) error {
 	for _, user := range users {
 		if (user.Name == someuser.Name) {
 			if (user.Password == someuser.Password) {
-				u.username = someuser.Name
+				u.Username = someuser.Name
 				u.InitializeCards()
 				return c.SendStatus(200)
 			} else {
@@ -52,8 +52,8 @@ func (u *UserCards) InitializeCards() {
 	_ = gocsv.UnmarshalBytes(data, &cardsWuser)
 
 	for _,card := range cardsWuser {
-		if card.User == u.username {
-			u.cards = append(u.cards, models.Card{
+		if card.User == u.Username {
+			u.Cards = append(u.Cards, models.Card{
 				Id: card.Id,
 				Word: card.Word,
 				Definition: card.Definition,

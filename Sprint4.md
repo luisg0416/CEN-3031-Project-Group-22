@@ -11,17 +11,27 @@ Routing
 1. Should visit the about page
 2. Should visit the sign-in page
 3. Should visit the home page
+
+
 Interaction
 1. Acknowledge user wants flashcards
 2. Acknowledge user wants quizzes
+
+
 Interaction: Flashcards
 1. Select a course...
 2. Flip one of the cards
+
+
 Interaction: Quizzes
 1. Select a course...
+
+
 Sign in
 1. Submit on sign-in page
 2. Navigates to sign-up page
+
+
 Sign up
 1. Account creation submission
 2. Navigates to sign-in pages

@@ -16,6 +16,7 @@ type User struct {
 }
 
 func (u *UserCards) Login(c *fiber.Ctx) error {
+	u.Cards = nil
 	someuser := &User{}
 
 	if err := c.BodyParser(someuser); err != nil {

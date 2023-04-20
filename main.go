@@ -6,6 +6,7 @@ import (
 	"github.com/gofiber/template/html"
 	"github.com/luisg0416/CEN-3031-Project-Group-22/controllers"
 	"github.com/luisg0416/CEN-3031-Project-Group-22/initializers"
+	//"github.com/luisg0416/CEN-3031-Project-Group-22/models"
 )
 
 func init() {
@@ -17,6 +18,8 @@ func main() {
 	// Load templates
 	engine := html.New("./views", ".html")
 
+	user := controllers.UserCards{}
+
 	// Create app
 	app := fiber.New(fiber.Config{
 		Views: engine,
@@ -26,11 +29,14 @@ func main() {
 	app.Static("/", "./public")
 
 	// Routing
+	app.Post("/api/login", user.Login)
+	app.Post("/api/signup", user.CreateUser)
+
 	app.Get("/api", controllers.ApiPing)
-	app.Post("/api/flashCards", controllers.CreateFlashCard)
-	app.Get("/api/flashCards", controllers.GetFlashCards)
-	app.Get("/api/flashCards/:id", controllers.GetFlashCardsID)
-	app.Delete("/api/flashCards/:id", controllers.DeleteFlashCard)
+	app.Post("/api/flashCards", user.CreateFlashCard)
+	app.Get("/api/flashCards", user.GetFlashCards)
+	app.Get("/api/flashCards/:id", user.GetFlashCardsID)
+	app.Delete("/api/flashCards/:id", user.DeleteFlashCard)
 	
 	app.Get("/api/tasks", controllers.FetchTasks)
 	app.Post("/api/tasks", controllers.CreateTask)
@@ -41,7 +47,6 @@ func main() {
 		"/",
 		"/about",
 		"/sign-in",
-		"/sign-in/create-acc",
 		"/flashcards",
 	}
 
@@ -53,4 +58,3 @@ func main() {
 	app.Listen(":" + os.Getenv("PORT"))
 
 }
-

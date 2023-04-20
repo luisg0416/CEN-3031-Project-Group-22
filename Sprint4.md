@@ -4,6 +4,8 @@
 - Accomplished final formatting
 - Added sign-in and sign-up pages that follow one another
 - Fixed footer to the bottom of the homepage
+- Added quiz function
+- User can pick which class they want to study for (only two for now)
 
 ##### Unit tests:
 

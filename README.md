@@ -15,10 +15,11 @@ Team Members: Matthew Darrow (front-end), Kory Gauger (back-end), Luis Guerrero 
 - Uses *EsBuild* as the javascript bundler
 
 ## Running the frontend
-
+the command
 ```
 node ./esbuild.js --watch
 ```
+Run once and refresh to see frontend changes with included *--watch* flag
 
 # Backend
 ===================
@@ -38,7 +39,7 @@ go get "github.com/example"
 ```
 where the example in the above is the package that needs to be installed
 
-## Running the application
+## Running the backend
 the command
 ```
 go run main.go

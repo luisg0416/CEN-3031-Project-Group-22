@@ -32,7 +32,7 @@ export default function Home() {
           </Grid>
           <Grid item>
             <Card sx={{ minWidth: 250 }}>
-              <CardActionArea id="quizesButton" component={Link} to="/quizes">
+              <CardActionArea id="quizesButton" component={Link} to="/quizzes">
                 <CardContent>
                   <CardMedia
                     component="img"
@@ -43,7 +43,7 @@ export default function Home() {
                     sx={{ padding: "2em 2em 2em 2em", objectFit: "contain" }}
                   />
                   <Typography gutterBottom component="div">
-                    Quizes
+                    Quizzes
                   </Typography>
                 </CardContent>
               </CardActionArea>

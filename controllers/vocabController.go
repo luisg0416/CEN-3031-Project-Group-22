@@ -1,42 +1,68 @@
 package controllers
 
 import (
+	"os"
+	"github.com/gocarina/gocsv"
 	"github.com/gofiber/fiber/v2"
 	"github.com/luisg0416/CEN-3031-Project-Group-22/models"
 )
 
 var flashCards []models.Card
 
+type UserCards struct {
+	cards []models.Card
+	username string
+}
+
 func ApiPing(c *fiber.Ctx) error {
 	return c.Status(200).SendString("golang api up and running")
 }
 
 
-func CreateFlashCard(c *fiber.Ctx) error {
+func (u *UserCards) CreateFlashCard(c *fiber.Ctx) error {
+	if (u.username == "") {
+		return c.Status(400).SendString("No user")
+	}
+	
 	flashCard := &models.Card{}
 		
 	if err := c.BodyParser(flashCard); err != nil {
 		return err
 	}
 
-	flashCard.Id = len(flashCards) + 1
+	flashCard.Id = len(u.cards) + 1
 
-	flashCards = append(flashCards, *flashCard)
+	u.cards = append(u.cards, *flashCard)
+
+	csvCards, err := os.Create("storage/flashCards.csv")
+	if err != nil {
+		panic(err)
+	}
+	defer csvCards.Close()
+
+	newCard := models.CardWUser{
+		Id: flashCard.Id,
+		User: u.username,
+		Word: flashCard.Word,
+		Definition: flashCard.Definition,
+	}
+	gocsv.MarshalFile(&newCard, csvCards)	
+
 
 	//fmt.Println(flashCard)
 
 	return c.SendStatus(200)
 }
 
-func GetFlashCards(c *fiber.Ctx) error {
-	if len(flashCards) == 0 {
-		return c.Status(400).SendString("No FlashCards")
+func (u *UserCards) GetFlashCards(c *fiber.Ctx) error {
+	if len(u.cards) == 0 {
+		return c.Status(400).SendString("No FlashCards")		
 	}
 
-	return c.JSON(flashCards)
+	return c.JSON(u.cards)
 }
 
-func GetFlashCardsID(c *fiber.Ctx) error {
+func (u *UserCards) GetFlashCardsID(c *fiber.Ctx) error {
 	id, err := c.ParamsInt("id")
 	if err != nil {
 		return c.Status(401).SendString("Invalid id")
@@ -56,7 +82,7 @@ func GetFlashCardsID(c *fiber.Ctx) error {
 	return c.JSON(card)
 } 
 
-func DeleteFlashCard(c *fiber.Ctx) error {
+func (u *UserCards) DeleteFlashCard(c *fiber.Ctx) error {
 	id, err := c.ParamsInt("id")
 	if err != nil {
 		return c.Status(401).SendString("Invalid Id")
